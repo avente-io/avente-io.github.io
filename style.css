@@ -1,0 +1,153 @@
+:root {
+  --main-background-hidden: hsla(0, 0%, 0%, 0);
+  --main-black: hsl(0, 0%, 0%);
+  --main-coral-dark: hsl(0, 31%, 50%);
+  --main-coral-dark-bg: hsla(0, 31%, 50%, 0.1);
+  --main-gray: hsl(213, 8%, 51%);
+  --main-red: hsl(0, 79%, 64%);
+  --main-red-bg: hsla(0, 79%, 64%, 0.1);
+  --main-orange: hsl(28, 79%, 64%);
+  --main-orange-bg: hsla(28, 79%, 64%, 0.1);
+  --main-pink: hsl(318, 69%, 70%);
+  --main-pink-bg: hsla(318, 69%, 70%, 0.1);
+  --main-purple: hsl(237, 90%, 80%);
+  --main-purple-bg: hsla(237, 90%, 80%, 0.1);
+  --main-white: hsl(0, 0%, 100%);
+}
+
+::-moz-selection {
+  -webkit-text-fill-color: var(--main-black);
+
+  background: var(--main-orange);
+  color: var(--main-black);
+}
+
+::selection {
+  -webkit-text-fill-color: var(--main-black);
+
+  background: var(--main-orange);
+  color: var(--main-black);
+}
+
+body {
+  background: var(--main-black);
+  color: var(--main-gray);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display","SF Pro Icons", "Segoe UI", Roboto, "Helvetica Neue", "Arial", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.4;
+  margin: 36px auto;
+  max-width: 648px;
+  padding: 0 18px;
+  z-index: 1;
+}
+
+body:after {
+  -moz-filter: blur(90px);
+  -ms-filter: blur(90px);
+  -o-filter: blur(90px);
+  -webkit-filter: blur(90px);
+  
+  animation: rotation 30s linear infinite;
+  background: conic-gradient(var(--main-red) 21deg, var(--main-coral-dark) 120deg, var(--main-orange) 180deg, var(--main-pink) 270deg, var(--main-coral-dark) 342deg);
+  border-radius: 50%;
+  content: "";
+  filter: blur(90px);
+  height: 1800px;
+  left: 50%;
+  margin-left: -900px;
+  margin-top: -900px;
+  opacity: 0.21;
+  position: absolute;
+  top: -720px;
+  width: 1800px;
+  z-index: -1;
+}
+
+h1, h2, h3, h4, h5 {
+  color: var(--main-white);
+  line-height: 1.2;
+}
+
+h1 {
+  font-weight: 800;
+}
+
+h1 > span {
+  background: linear-gradient(90deg, var(--main-orange), var(--main-coral-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+small {
+  display: block;
+}
+
+small.text-bold {
+  color: var(--main-white);
+  font-weight: 600;
+}
+
+a:not(.button) {
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  background-size: 200% 1px;
+  padding-bottom: 2px;
+  text-decoration: none;
+  transition: background-position .2s;
+}
+
+a.default {
+  background-image: linear-gradient(to right, var(--main-orange)  50%, var(--main-background-hidden) 50%);
+  color: var(--main-white);
+}
+
+a.button {
+  background-color: var(--main-orange-bg);
+  border-radius: 9px;
+  color: var(--main-orange);
+  display: inline-block;
+  font-weight: 600;
+  margin: 0px 3px;
+  padding: 3px 9px;
+  text-decoration: none;
+}
+
+a.button:hover {
+  background-color: var(--main-orange);
+  color: var(--main-black);
+}
+
+a.highlight {
+  color: var(--main-orange);
+}
+
+a.highlight:hover {
+  background-image: linear-gradient(to right, var(--main-orange)  50%, var(--main-background-hidden) 50%);
+  color: var(--main-orange);
+}
+
+a:not(.button):hover {
+  background-position: 0% 100%;
+  color: var(--main-orange);
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer {
+  margin-top: 72px;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
