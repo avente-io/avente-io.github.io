@@ -1,37 +1,37 @@
 :root {
-  --main-background-hidden: hsla(0, 0%, 0%, 0);
-  --main-black: hsl(0, 0%, 0%);
-  --main-coral-dark: hsl(0, 31%, 50%);
-  --main-coral-dark-bg: hsla(0, 31%, 50%, 0.1);
-  --main-gray: hsl(213, 8%, 51%);
-  --main-red: hsl(0, 79%, 64%);
-  --main-red-bg: hsla(0, 79%, 64%, 0.1);
-  --main-orange: hsl(28, 79%, 64%);
-  --main-orange-bg: hsla(28, 79%, 64%, 0.1);
-  --main-pink: hsl(318, 69%, 70%);
-  --main-pink-bg: hsla(318, 69%, 70%, 0.1);
-  --main-purple: hsl(237, 90%, 80%);
-  --main-purple-bg: hsla(237, 90%, 80%, 0.1);
-  --main-white: hsl(0, 0%, 100%);
+  --background-hidden: hsla(0, 0%, 0%, 0);
+  --black: hsl(0, 0%, 0%);
+  --coral-dark-bg: hsla(0, 31%, 50%, 0.1);
+  --coral-dark: hsl(0, 31%, 50%);
+  --gray: hsl(213, 8%, 51%);
+  --orange-bg: hsla(28, 79%, 64%, 0.1);
+  --orange: hsl(28, 79%, 64%);
+  --pink-bg: hsla(318, 69%, 70%, 0.1);
+  --pink: hsl(318, 69%, 70%);
+  --purple-bg: hsla(237, 90%, 80%, 0.1);
+  --purple: hsl(237, 90%, 80%);
+  --red-bg: hsla(0, 79%, 64%, 0.1);
+  --red: hsl(0, 79%, 64%);
+  --white: hsl(0, 0%, 100%);
 }
 
 ::-moz-selection {
-  -webkit-text-fill-color: var(--main-black);
+  -webkit-text-fill-color: var(--black);
 
-  background: var(--main-orange);
-  color: var(--main-black);
+  background: var(--orange);
+  color: var(--black);
 }
 
 ::selection {
-  -webkit-text-fill-color: var(--main-black);
+  -webkit-text-fill-color: var(--black);
 
-  background: var(--main-orange);
-  color: var(--main-black);
+  background: var(--orange);
+  color: var(--black);
 }
 
 body {
-  background: var(--main-black);
-  color: var(--main-gray);
+  background: var(--black);
+  color: var(--gray);
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display","SF Pro Icons", "Segoe UI", Roboto, "Helvetica Neue", "Arial", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 18px;
   font-weight: 400;
@@ -40,7 +40,7 @@ body {
   margin: 36px auto;
   max-width: 648px;
   padding: 0 18px;
-  z-index: 1;
+  z-index: 2;
 }
 
 body:after {
@@ -49,8 +49,11 @@ body:after {
   -o-filter: blur(90px);
   -webkit-filter: blur(90px);
   
-  animation: rotation 30s linear infinite;
-  background: conic-gradient(var(--main-red) 21deg, var(--main-coral-dark) 120deg, var(--main-orange) 180deg, var(--main-pink) 270deg, var(--main-coral-dark) 342deg);
+  animation-name: rotation, grow;
+  animation-duration: 30s, 2s;
+  animation-delay: 2s, 0;
+
+  background: conic-gradient(var(--red) 0deg, var(--coral-dark) 120deg, var(--orange) 180deg, var(--pink) 270deg, var(--coral-dark) 342deg);
   border-radius: 50%;
   content: "";
   filter: blur(90px);
@@ -66,7 +69,7 @@ body:after {
 }
 
 h1, h2, h3, h4, h5 {
-  color: var(--main-white);
+  color: var(--white);
   line-height: 1.2;
 }
 
@@ -75,7 +78,7 @@ h1 {
 }
 
 h1 > span {
-  background: linear-gradient(90deg, var(--main-orange), var(--main-coral-dark));
+  background: linear-gradient(90deg, var(--orange), var(--coral-dark));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -85,7 +88,7 @@ small {
 }
 
 small.text-bold {
-  color: var(--main-white);
+  color: var(--white);
   font-weight: 600;
 }
 
@@ -99,14 +102,14 @@ a:not(.button) {
 }
 
 a.default {
-  background-image: linear-gradient(to right, var(--main-orange)  50%, var(--main-background-hidden) 50%);
-  color: var(--main-white);
+  background-image: linear-gradient(to right, var(--orange)  50%, var(--background-hidden) 50%);
+  color: var(--white);
 }
 
 a.button {
-  background-color: var(--main-orange-bg);
+  background-color: var(--orange-bg);
   border-radius: 9px;
-  color: var(--main-orange);
+  color: var(--orange);
   display: inline-block;
   font-weight: 600;
   margin: 0px 3px;
@@ -115,22 +118,22 @@ a.button {
 }
 
 a.button:hover {
-  background-color: var(--main-orange);
-  color: var(--main-black);
+  background-color: var(--orange);
+  color: var(--black);
 }
 
 a.highlight {
-  color: var(--main-orange);
+  color: var(--orange);
 }
 
 a.highlight:hover {
-  background-image: linear-gradient(to right, var(--main-orange)  50%, var(--main-background-hidden) 50%);
-  color: var(--main-orange);
+  background-image: linear-gradient(to right, var(--orange)  50%, var(--background-hidden) 50%);
+  color: var(--orange);
 }
 
 a:not(.button):hover {
   background-position: 0% 100%;
-  color: var(--main-orange);
+  color: var(--orange);
 }
 
 ul {
@@ -149,5 +152,15 @@ footer {
   }
   to {
     transform: rotate(359deg);
+  }
+}
+
+@keyframes grow {
+  from {
+    transform: scale(0.6);
+  }
+
+  to {
+    transform: scale(1);
   }
 }
