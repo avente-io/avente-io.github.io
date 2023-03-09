@@ -1,166 +1,81 @@
 :root {
-  --background-hidden: hsla(0, 0%, 0%, 0);
-  --black: hsl(0, 0%, 0%);
-  --coral-dark-bg: hsla(0, 31%, 50%, 0.1);
-  --coral-dark: hsl(0, 31%, 50%);
-  --gray: hsl(213, 8%, 51%);
-  --orange-bg: hsla(28, 79%, 64%, 0.1);
-  --orange: hsl(28, 79%, 64%);
-  --pink-bg: hsla(318, 69%, 70%, 0.1);
-  --pink: hsl(318, 69%, 70%);
-  --purple-bg: hsla(237, 90%, 80%, 0.1);
-  --purple: hsl(237, 90%, 80%);
-  --red-bg: hsla(0, 79%, 64%, 0.1);
-  --red: hsl(0, 79%, 64%);
-  --white: hsl(0, 0%, 100%);
+  --white: #FFFFFF;
+  --primary: #FFEB69;
+  --black: #000000;
+
+  --opacity-primary: 1;
+  --opacity-secondary: 0.8;
+  --opacity-teriary: 0.5;
 }
 
-::-moz-selection {
+::-moz-selection, ::selection {
   -webkit-text-fill-color: var(--black);
-
-  background: var(--orange);
-  color: var(--black);
-}
-
-::selection {
-  -webkit-text-fill-color: var(--black);
-
-  background: var(--orange);
+  background: var(--primary);
   color: var(--black);
 }
 
 body {
   background: var(--black);
-  color: var(--gray);
+  color: var(--white);
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display","SF Pro Icons", "Segoe UI", Roboto, "Helvetica Neue", "Arial", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 18px;
-  font-weight: 400;
-  letter-spacing: 0.01em;
-  line-height: 1.4;
-  margin: 36px auto;
-  max-width: 648px;
-  padding: 0 18px;
-  z-index: 2;
-}
-
-body:after {
-  -moz-filter: blur(90px);
-  -ms-filter: blur(90px);
-  -o-filter: blur(90px);
-  -webkit-filter: blur(90px);
-  
-  animation-name: rotation, grow;
-  animation-duration: 30s, 2s;
-  animation-delay: 2s, 0;
-
-  background: conic-gradient(var(--red) 0deg, var(--coral-dark) 120deg, var(--orange) 180deg, var(--pink) 270deg, var(--coral-dark) 342deg);
-  border-radius: 50%;
-  content: "";
-  filter: blur(90px);
-  height: 1800px;
-  left: 50%;
-  margin-left: -900px;
-  margin-top: -900px;
-  opacity: 0.21;
-  position: absolute;
-  top: -720px;
-  width: 1800px;
-  z-index: -1;
-}
-
-h1, h2, h3, h4, h5 {
-  color: var(--white);
-  line-height: 1.2;
-}
-
-h1 {
-  font-weight: 800;
-}
-
-h1 > span {
-  background: linear-gradient(90deg, var(--orange), var(--coral-dark));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-small {
-  display: block;
-}
-
-small.text-bold {
-  color: var(--white);
-  font-weight: 600;
-}
-
-a:not(.button) {
-  background-position: 100% 100%;
-  background-repeat: no-repeat;
-  background-size: 200% 1px;
-  padding-bottom: 2px;
-  text-decoration: none;
-  transition: background-position .2s;
-}
-
-a.default {
-  background-image: linear-gradient(to right, var(--orange)  50%, var(--background-hidden) 50%);
-  color: var(--white);
-}
-
-a.button {
-  background-color: var(--orange-bg);
-  border-radius: 9px;
-  color: var(--orange);
-  display: inline-block;
-  font-weight: 600;
-  margin: 0px 3px;
-  padding: 3px 9px;
-  text-decoration: none;
-}
-
-a.button:hover {
-  background-color: var(--orange);
-  color: var(--black);
-}
-
-a.highlight {
-  color: var(--orange);
-}
-
-a.highlight:hover {
-  background-image: linear-gradient(to right, var(--orange)  50%, var(--background-hidden) 50%);
-  color: var(--orange);
-}
-
-a:not(.button):hover {
-  background-position: 0% 100%;
-  color: var(--orange);
-}
-
-ul {
-  list-style: none;
   margin: 0;
   padding: 0;
 }
 
+main {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  margin: 0px auto;
+  max-width: 1040px;
+  min-height: 100vh;
+}
+
+header {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  padding: 80px 40px;
+}
+
+section {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: flex-end;
+  padding: 0 40px;
+}
+
 footer {
-  margin-top: 72px;
+  opacity: var(--opacity-teriary);
+  padding: 80px 40px;
 }
 
-@keyframes rotation {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(359deg);
-  }
+a {
+  color: var(--white);
+  font-weight: normal;
+  opacity: var(--opacity-teriary);
+  text-decoration: none;
 }
 
-@keyframes grow {
-  from {
-    transform: scale(0.6);
-  }
+a:hover {
+  opacity: var(--opacity-secondary);
+}
 
-  to {
-    transform: scale(1);
-  }
+a.highlight {
+  color: var(--primary);
+  opacity: var(--opacity-primary);
+}
+
+a.highlight:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  margin-bottom: 0.2rem;
+}
+
+h3 {
+  margin-bottom: 0.4rem;
 }
