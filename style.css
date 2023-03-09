@@ -23,7 +23,7 @@ body {
 }
 
 main {
-  align-items: flex-start;
+  align-items: stretch;
   display: flex;
   flex-direction: column;
   margin: 0px auto;
@@ -34,8 +34,12 @@ main {
 header {
   align-items: flex-start;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   padding: 80px 40px;
+}
+
+header > a {
+  margin-right: 8px;
 }
 
 section {
