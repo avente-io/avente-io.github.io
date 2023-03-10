@@ -1,15 +1,14 @@
 :root {
   --white: #FFFFFF;
-  --primary: #FFEB69;
+  --primary: #FFBF00;
   --black: #000000;
 
   --opacity-primary: 1;
   --opacity-secondary: 0.8;
-  --opacity-teriary: 0.5;
+  --opacity-teriary: 0.6;
 }
 
-::-moz-selection, ::selection {
-  -webkit-text-fill-color: var(--black);
+::selection {
   background: var(--primary);
   color: var(--black);
 }
@@ -32,14 +31,11 @@ main {
 }
 
 header {
-  align-items: flex-start;
+  align-items: center;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   padding: 80px 40px;
-}
-
-header > a {
-  margin-right: 8px;
 }
 
 section {
@@ -59,21 +55,30 @@ footer {
 a {
   color: var(--white);
   font-weight: normal;
-  opacity: var(--opacity-teriary);
+  opacity: var(--opacity-secondary);
   text-decoration: none;
 }
 
 a:hover {
-  opacity: var(--opacity-secondary);
-}
-
-a.highlight {
   color: var(--primary);
   opacity: var(--opacity-primary);
+  text-decoration: underline;
 }
 
-a.highlight:hover {
-  text-decoration: underline;
+a.button {
+  align-items: center;
+  background-color: var(--white);
+  border-radius: 16px;
+  color: black;
+  display: flex;
+  font-weight: 600;
+  opacity: 1;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+a.button:hover {
+  background-color: var(--primary);
 }
 
 h1 {
